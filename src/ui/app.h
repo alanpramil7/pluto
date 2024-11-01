@@ -5,6 +5,13 @@
 
 typedef struct {
   WINDOW *win;
+  char **files;
+  int current_index;
+} TrackList;
+
+typedef struct {
+  WINDOW *win;
+  TrackList track_list;
   char *title;
   bool is_running;
 } App;
@@ -15,5 +22,8 @@ bool init_colors();
 void run(App *app);
 void handle_input(App *app);
 void app_cleanup(App *app);
+
+// Tracklist window functions
+bool init_tracklist(TrackList *track_list, char *dir, int height, int width);
 
 #endif

@@ -1,24 +1,16 @@
-# Compiler
 CC = gcc
+CFLAGS = -Wall -std=c99
 
-# Complier flags
-CFLAGS = -Wall -g
+LDFLAGS = -lncurses 
 
-# Libraries
-LIBS = -lncurses
-
-# Source files
-SRC = $(wildcard src/*.c)
-
-# Binary
 TARGET = pluto
 
-# Build
+SRCS = $(wildcard src/*.c src/ui/*.c)
+
 all: $(TARGET)
 
-$(TARGET) : $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC) $(LIBS)
+$(TARGET): $(SRCS)
+	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET) $(LDFLAGS)
 
-# Clean binary
-clean:
+clean: 
 	rm -rf $(TARGET)

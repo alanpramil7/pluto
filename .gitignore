@@ -1,3 +1,4 @@
 pluto
 /include
+/obj
 *.o

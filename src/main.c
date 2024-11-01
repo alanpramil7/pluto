@@ -1,8 +1,16 @@
-#include <stdio.h>
-
 #include <ncurses.h>
 
+#include "ui/app.h"
+
 int main() {
-  printf("Hell...");
+  // Create main window
+  App app;
+  if (!init_app(&app)) {
+    return 1;
+  }
+
+  run(&app);
+  app_cleanup(&app);
+
   return 0;
 }

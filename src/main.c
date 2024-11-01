@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-int main () {
-	printf("Hell...");
-	return 0;
+#include <ncurses.h>
+
+int main() {
+  printf("Hell...");
+  return 0;
 }
